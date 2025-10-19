@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" style="scroll-behavior: smooth;">
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -12,13 +12,13 @@
 <body class="bg-slate-700">
 	<nav class="fixed top-0 left-0 lg:h-[80px] h-[60px] backdrop-blur z-30 w-full">
 		<div class="container px-5 h-full mx-auto flex items-center justify-betweeen relative">
-			<button class="w-[40px] h-[23px] flex flex-col justify-between text-slate-100 hover:cursor-pointer ms-auto" id="open-navbar">
+			<button class="w-[40px] h-[23px] flex flex-col justify-between text-slate-100 hover:cursor-pointer ms-auto lg:hidden" id="open-navbar">
 				<span class="bar w-full block h-[3px] bg-slate-100"></span>
 				<span class="bar w-full block h-[3px] bg-slate-100"></span>
 				<span class="bar w-full block h-[3px] bg-slate-100"></span>
 			</button>
 
-			<ul class="navlist flex flex-col gap-5 items-center py-4 fixed h-screen w-[70vw] bg-slate-800 top-0 right-[-100%] lg:static lg:bg-[unset] lg:items-center lg:justify-betweeen lg:flex-row lg:gap-8">
+			<ul class="flex flex-col gap-5 items-center py-4 fixed h-screen w-[70vw] bg-slate-800 top-0 right-[-100%] lg:static lg:bg-[unset] lg:items-center lg:justify-betweeen lg:flex-row lg:gap-8" id="navlist">
 				<div class="head-nav-mobile w-full p-3 flex items-center justify-end gap-5 lg:hidden">
 					<button class="w-[40px] h-[40px] hover:cursor-pointer" id="darkmode-button-mobile">
 						<i class="bi bi-moon-stars-fill text-slate-100" id="icon-darkmode-mobile"></i>
@@ -363,5 +363,6 @@
 			</div>
 		</section>
 	</div>
+	<script type="module" src="/script/darkmode.js"></script>
 </body>
 </html>
