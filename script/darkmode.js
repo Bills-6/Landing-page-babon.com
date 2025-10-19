@@ -20,20 +20,26 @@ function callNav(is) {
 // darkmode script
 const body = document.body;
 
+const darkmodeMobile = document.getElementById("darkmode-button-mobile"),
+	iconDarkmodeMoonMobile = document.getElementById("icon-darkmode-mobile"),
+	iconDarkmodeSunMobile = document.getElementById("icon-darkmode-sun-mobile");
+const darkmodeLarge = document.getElementById("")
+
 function EngineTheme(is) {
 	// take information data-theme in body
-	let themeBody = body.dataset.theme;
+	const themeBody = body.dataset.theme;
 	
 	if (themeBody === "dark") {
 		body.classList.replace("bg-slate-700", "bg-[unset]");
+		body.dataset.theme = "light";
+
+		iconDarkmodeSunMobile.classList.replace("hidden", "block");
+		iconDarkmodeMoonMobile.classList.add("hidden");
 	} else {
 		body.classList.replace("bg-[unset]", "bg-slate-700");
+		body.dataset.theme = "dark";
 	}
 }
-
-const darkmodeMobile = document.getElementById("darkmode-button-mobile"),
-	iconDarkmodeMobile = document.getElementById("icon-darkmode-mobile");
-const darkmodeLarge = document.getElementById("")
 
 darkmodeMobile.addEventListener("click", function() {
 	EngineTheme();
