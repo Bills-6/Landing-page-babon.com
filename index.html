@@ -14,7 +14,13 @@
 		<div class="container h-full mx-auto flex items-center justify-betweeen">
 			<ul class="navlist flex flex-col gap-5 items-center py-4 fixed h-screen w-[70vw] bg-slate-800 top-0 right-0 lg:static lg:bg-[unset] lg:items-center lg:justify-betweeen lg:flex-row lg:gap-8">
 				<div class="head-nav-mobile w-full p-3 flex items-center justify-end gap-5 lg:hidden">
-					<button class="w-[40px] h-[40px] bg-blue-400" id="darkmode-button-mobile"> </button>
+					<button class="w-[40px] h-[40px] hover:cursor-pointer" id="darkmode-button-mobile">
+						<i class="bi bi-moon-stars-fill text-slate-100" id="icon-darkmode-mobile"></i>
+					</button>
+
+					<button class="w-[40px] h-[40px] hover:cursor-pointer" id="close-navbar">
+						<i class="bi bi-forward text-[30px] text-slate-100"></i>
+					</button>
 				</div>
 
 				<li class="nav-item font-bold text-slate-100"><a href="#hero">Home</a></li>
