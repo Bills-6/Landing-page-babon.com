@@ -1,0 +1,74 @@
+/* Dark Lab — Engineering + Cyberpunk sliders */
+:root{
+  --bg: #050608;
+  --panel: #0a0f12;
+  --muted: #95a0a6;
+  --grid: #172026;
+  --axis: #9fb5ba;
+  --accent: #00f0d1;
+  --neon: #7b4bff;
+  --chalk: #e6f6f5;
+  --glass: rgba(255,255,255,0.025);
+}
+
+*{ box-sizing:border-box; }
+html,body{ height:100%; margin:0; font-family: "Inter", "Segoe UI", Roboto, Arial; background:var(--bg); color:var(--chalk); -webkit-font-smoothing:antialiased; }
+
+.container{ max-width:1300px; margin:18px auto; padding:16px; }
+header h1{ margin:0 0 6px 0; font-size:20px; color:var(--chalk); }
+header .sub{ margin:0; color:var(--muted); font-size:13px; }
+
+main{ display:flex; gap:18px; margin-top:14px; align-items:flex-start; }
+.controls{
+  width:320px;
+  background:linear-gradient(180deg, rgba(255,255,255,0.02), transparent);
+  border:1px solid rgba(127,90,255,0.06);
+  padding:14px; border-radius:10px;
+  box-shadow: 0 6px 30px rgba(0,0,0,0.6), inset 0 1px 0 rgba(255,255,255,0.02);
+}
+.controls h2{ margin:0 0 10px 0; font-size:16px; color:var(--neon); }
+.controls h3{ color:var(--accent); margin:8px 0; font-size:14px; }
+
+.param-row{ display:flex; gap:10px; align-items:center; margin:10px 0; }
+.param-row .label{ width:110px; color:var(--muted); font-size:13px; }
+.param-row input[type="range"]{ flex:1; accent-color: var(--neon); }
+.param-row .num{ width:76px; padding:6px 8px; border-radius:6px; border:1px solid rgba(255,255,255,0.04); background:var(--glass); color:var(--chalk); }
+
+.param-row.small input[type="number"]{ width:110px; }
+.sep{ color:var(--muted); margin:0 8px; }
+
+hr.d{ border:0; height:1px; background:linear-gradient(90deg, transparent, rgba(255,255,255,0.03), transparent); margin:12px 0; }
+
+.anim-controls .label{ color:var(--muted); font-size:13px; display:block; margin-top:8px; }
+.anim-controls select{ width:100%; padding:8px; margin-top:6px; border-radius:6px; border:1px solid rgba(255,255,255,0.04); background:rgba(0,0,0,0.25); color:var(--chalk); }
+
+.speed-row{ display:flex; gap:8px; margin-top:8px; }
+.speed-btn{ flex:1; padding:8px; border-radius:6px; border:1px solid rgba(255,255,255,0.04); background:transparent; color:var(--muted); cursor:pointer; }
+.speed-btn.active{ background:linear-gradient(90deg, rgba(123,75,255,0.15), rgba(63,224,208,0.06)); color:var(--chalk); box-shadow: 0 6px 18px rgba(123,75,255,0.06); border:1px solid rgba(123,75,255,0.14); }
+
+.play-row{ display:flex; gap:8px; align-items:center; margin-top:10px; }
+button.play, button.pause, button.reset, button#drawBtn{
+  padding:8px 12px; border-radius:8px; border:none; cursor:pointer; font-weight:600;
+}
+button.play{ background:linear-gradient(90deg, var(--accent), var(--neon)); color:#051218; }
+button.pause{ background:#333; color:var(--chalk); border:1px solid rgba(255,255,255,0.03); }
+button.reset{ background:transparent; color:var(--muted); border:1px solid rgba(255,255,255,0.03); padding:6px 10px; border-radius:6px; }
+
+.autoupdate{ margin-left:8px; color:var(--muted); font-size:13px; display:flex; align-items:center; gap:6px; }
+
+.style-opts{ display:block; margin:8px 0; color:var(--muted); font-size:13px; }
+
+.footer-note{ margin-top:8px; color:var(--muted); font-size:12px; }
+
+.canvas-wrap{
+  flex:1; background:linear-gradient(180deg, rgba(255,255,255,0.01), transparent); border-radius:10px; padding:12px; border:1px solid rgba(255,255,255,0.02);
+  display:flex; justify-content:center; align-items:center;
+}
+canvas{ background: linear-gradient(180deg, rgba(255,255,255,0.01), rgba(255,255,255,0.005)); border-radius:6px; box-shadow: 0 10px 40px rgba(11,15,18,0.8); }
+
+/* small responsive */
+@media (max-width:980px){
+  main{ flex-direction:column; }
+  .controls{ width:100%; order:2; }
+  .canvas-wrap{ order:1; }
+}

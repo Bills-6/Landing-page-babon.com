@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Dark Lab — Interactive Cosine Visualizer (Wave Hidup)</title>
+  <link rel="stylesheet" href="k.css" />
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>Dark Lab — <span id="formula-display">y = A·cos(Bx + C) + D</span></h1>
+      <p class="sub">Interactive · Pure JS · Engineering + Cyberpunk · Sliders & Wave Animation</p>
+    </header>
+
+    <main>
+      <aside class="controls">
+        <h2>Parameter</h2>
+
+        <div class="param-row">
+          <label class="label">A (amplitudo)</label>
+          <input id="A_slider" type="range" min="0" max="4" step="0.01" value="1">
+          <input id="A_num" class="num" type="number" step="0.01" value="1">
+        </div>
+
+        <div class="param-row">
+          <label class="label">B (frekuensi)</label>
+          <input id="B_slider" type="range" min="0" max="8" step="0.01" value="1">
+          <input id="B_num" class="num" type="number" step="0.01" value="1">
+        </div>
+
+        <div class="param-row">
+          <label class="label">C (fase, rad)</label>
+          <input id="C_slider" type="range" min="-6.28" max="6.28" step="0.01" value="0">
+          <input id="C_num" class="num" type="number" step="0.01" value="0">
+        </div>
+
+        <div class="param-row">
+          <label class="label">D (offset)</label>
+          <input id="D_slider" type="range" min="-4" max="4" step="0.01" value="0">
+          <input id="D_num" class="num" type="number" step="0.01" value="0">
+        </div>
+
+        <div class="param-row small">
+          <label class="label">Rentang X</label>
+          <input id="xmin" type="number" step="1" value="-10">
+          <span class="sep">s/d</span>
+          <input id="xmax" type="number" step="1" value="10">
+        </div>
+
+        <hr class="d">
+
+        <h3>Animasi (Wave Hidup)</h3>
+        <div class="anim-controls">
+          <label class="label">Parameter dianimasikan</label>
+          <select id="animParam">
+            <option value="C">C — fase (pergerakan)</option>
+            <option value="A">A — amplitudo (bernapas)</option>
+            <option value="B">B — frekuensi (rapet/lapang)</option>
+            <option value="D">D — offset (naik turun)</option>
+            <option value="none">none — manual (sliders only)</option>
+          </select>
+
+          <label class="label">Speed</label>
+          <div class="speed-row">
+            <button data-speed="0.4" class="speed-btn">Pelan</button>
+            <button data-speed="1" class="speed-btn active">Normal</button>
+            <button data-speed="2.2" class="speed-btn">Cepat</button>
+          </div>
+
+          <div class="play-row">
+            <button id="playBtn" class="play">Play</button>
+            <button id="pauseBtn" class="pause hidden">Pause</button>
+            <button id="resetBtn" class="reset">Reset</button>
+            <label class="autoupdate">
+              <input id="autoUpdate" type="checkbox" checked> Auto update
+            </label>
+          </div>
+
+        </div>
+
+        <hr class="d">
+        <label class="style-opts">
+          <input id="showTicks" type="checkbox" checked> Tampilkan angka sumbu & ticks
+        </label>
+        <label class="style-opts">
+          <input id="showOrigin" type="checkbox" checked> Tampilkan titik pusat (0,0)
+        </label>
+
+        <div class="footer-note">Tip: nilai C diinput dalam <em>radian</em>. Mode animasi: pilih parameter lalu Play.</div>
+      </aside>
+
+      <section class="canvas-wrap">
+        <canvas id="graph" width="1200" height="650"></canvas>
+      </section>
+    </main>
+
+    <footer>
+      <small>Built with ❤️ — Dark Lab visualizer (interactive)</small>
+    </footer>
+  </div>
+
+  <script src="k.js"></script>
+</body>
+</html>
