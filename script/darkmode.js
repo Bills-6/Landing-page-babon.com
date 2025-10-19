@@ -16,3 +16,25 @@ function callNav(is) {
 		navbar.classList.replace("right-0", "right-[-100%]");
 	}
 }
+
+// darkmode script
+const body = document.body;
+
+function EngineTheme(is) {
+	// take information data-theme in body
+	let themeBody = body.dataset.theme;
+	
+	if (themeBody === "dark") {
+		body.classList.replace("bg-slate-700", "bg-[unset]");
+	} else {
+		body.classList.replace("bg-[unset]", "bg-slate-700");
+	}
+}
+
+const darkmodeMobile = document.getElementById("darkmode-button-mobile"),
+	iconDarkmodeMobile = document.getElementById("icon-darkmode-mobile");
+const darkmodeLarge = document.getElementById("")
+
+darkmodeMobile.addEventListener("click", function() {
+	EngineTheme();
+});
